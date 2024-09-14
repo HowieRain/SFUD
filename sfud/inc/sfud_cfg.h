@@ -38,14 +38,15 @@
 #define SFUD_USING_FLASH_INFO_TABLE
 
 enum {
-    SFUD_XXXX_DEVICE_INDEX = 0,
+    SFUD_W25Q128_DEVICE_INDEX = 0,
 };
 
 #define SFUD_FLASH_DEVICE_TABLE                                                \
 {                                                                              \
-    [SFUD_XXXX_DEVICE_INDEX] = {.name = "XXXX", .spi.name = "SPIX"},           \
+    [SFUD_W25Q128_DEVICE_INDEX] = {.name = "W25Q128JV", .spi.name = "SPI1",    \
+    .chip = {"W25Q128JV", SFUD_MF_ID_WINBOND, 0x40, 0x18, 16L*1024L*1024L, SFUD_WM_PAGE_256B, 4096, 0x20},},   \
 }
 
-#define SFUD_USING_QSPI
+// #define SFUD_USING_QSPI
 
 #endif /* _SFUD_CFG_H_ */
